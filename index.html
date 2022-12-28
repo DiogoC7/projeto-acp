@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://kit.fontawesome.com/e59e2b9f29.js" crossorigin="anonymous" async></script>
+    <script src="/script.js" async></script>
+    <title>Automóvel Club de Portugal | ACP</title>
+</head>
+<body>
+    <div class="header-container">
+        <div class="top-nav">
+            <div id="top-nav-acc" class="top-nav-item"><a href="#">
+                <span>myACP</span>
+                <i class="fa fa-user" aria-hidden="true"></i>
+            </a></div>
+            <div class="top-nav-item"><a href="#">
+                <i class="fa fa-globe" aria-hidden="true"></i>
+                <span>PT</span>
+            </a></div>
+            <div class="top-nav-item"><a href="#">
+                <span>Loja</span>
+                <a class="top-icon" href="#">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </a></div>
+            <div class="top-nav-item">
+                <span>Siga-nos</span>
+                <a class="top-icon" href="https://www.facebook.com/acp.pt">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a class="top-icon" href="https://www.instagram.com/acp.automovel.club.de.portugal/">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="top-icon" href="https://www.youtube.com/c/ACPAutomovelClubdePortugal">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+            <div class="top-nav-item"><a href="#"><span>Contactos</span></a></div>
+        </div>
+        <div class="logo-container">
+            <div class="logo">
+                <a href="#" target="_self"><img src="/img/logo_acp.png" alt="logo-acp"></a>
+            </div>
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text">
+                    <button class="search-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                    <a href="#" class="close-search">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contacto-newsletter-container">
+                <div class="telefone-container">
+                    <a href="tel:215915915">215 915 915</a>
+                    <span class="tel-horario">24H / 365 DIAS POR ANO</span>
+                    <span class="tel-rede">chamada para a rede fixa nacional</span>
+                </div>
+                <div class="socio-container">
+                    <a class="socio-btn">FAÇA-SE SÓCIO</a>
+                </div>
+            </div>
+        </div>
+        <div class="container-menuDesktop">
+            <nav>
+                <ul class="menu-desktop">
+                    <li>o clube</li>
+                    <li>serviços</li>
+                    <li>veículos</li>
+                    <li>saúde e seguros</li>
+                    <li>viagens e lazer</li>
+                    <li>desporto automóvel</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <input class="radio-input" id="dot1" type = "radio" name="radio-btn" class="dot"></input>
+            <input class="radio-input" id="dot2" type = "radio" name="radio-btn" class="dot"></input>
+            <input class="radio-input" id="dot3" type = "radio" name="radio-btn" class="dot"></input>
+            <input class="radio-input" id="dot4" type = "radio" name="radio-btn" class="dot"></input>
+            <input class="radio-input" id="dot5" type = "radio" name="radio-btn" class="dot"></input>
+
+            <div class = "slide first">
+                <img class="slide-img" src="/img/slide-1.JPG" id="slide-1" alt="slide 1">
+            </div>
+            <div class = "slide">
+                <img class="slide-img" src="/img/slide-2.JPG" id="slide-2" alt="slide 2">
+            </div>
+            <div class = "slide">
+                <img class="slide-img" src="/img/slide-3.JPG" id="slide-3" alt="slide 3">
+            </div>
+            <div class = "slide">
+                <img class="slide-img" src="/img/slide-4.JPG" id="slide-4" alt="slide 4">
+            </div>
+            <div class = "slide">
+                <img class="slide-img" src="/img/slide-5.JPG" id="slide-5" alt="slide 5">
+            </div>
+            <div id="selling-price-form-container" class="selling-price-form-container">
+                <form id="selling-price-form" onsubmit="return getCotacaoVenda(event)"> 
+                    <span>Calcule o valor do seu carro</span>
+                    <div class="form-column">
+                        <label class="form-label" for="marca">Marca:</label><br>
+                        <input type="text" id="marca" name="marca"><br>
+                        <label class="form-label" for="modelo">Modelo:</label><br>
+                        <input type="text" id="modelo" name="modelo"><br>
+                        <label class="form-label" for="anoRegisto">Ano de compra:</label><br>
+                        <input type="number" id="anoRegisto" name="anoRegisto"><br>
+                    </div>
+                    <div class="form-column">
+                        <label class="form-label" for="kms">Km's:</label><br>
+                        <input type="number" id="kms" name="kms" min="1"><br>
+                        <label class="form-label" for="precoCompra">Preço de compra:</label><br>
+                        <input type="number" id="precoCompra" name="precoCompra" min="1" step="any"><br>
+                    </div>
+                    <button class="form-submit-btn" type="submit">Calcular</button>
+                </form>
+                <div id="form-result" class="form-result">
+                    <span id="titulo-valor-carro" class="titulo-valor-carro"></span>
+                    <p id="valor-carro" class="valor-carro"></p>
+                    <a class="call-btn" href="+351912380473">Contactem-me</a>
+                    <p class="aviso-valor">Este valor serve apenas como referência. Peça um contacto para saber mais.</p>
+                </div>
+            </div>
+        <div class="dots-container">
+            <label for="dot1" id="dot1-label" class="manual-btn">            
+            </label>
+            <label for="dot2" id="dot2-label" class="manual-btn">               
+            </label>
+            <label for="dot3" id="dot3-label" class="manual-btn">                
+            </label>
+            <label for="dot4" id="dot4-label" class="manual-btn">                
+            </label>
+            <label for="dot5" id="dot5-label" class="manual-btn">
+            </label>
+            </div>
+        </div>
+    </div>
+    <div class="servicos-container">
+        <ul class="servicos-list">
+            <li><img src="/img/submenu_assistencia.png" alt="assistência acp"><span>assistência</span></li>
+            <li><img src="/img/submenu-loja-acp.png" alt="loja acp"><span>loja</span></li>
+            <li><img src="/img/submenu_descontos.png" alt="descontos acp"><span>descontos</span></li>
+            <li><img src="/img/submenu-classicos.png" alt="classicos acp"><span>acp clássicos</span></li>
+            <li><img src="/img/submenu-autocaravanismo.png" alt="auto autocaravanismo acp"><span>acp autocaravanismo</span></li>
+            <li><img src="/img/submenu_golf.png" alt="acp golf"><span>acp golfe</span></li>
+        </ul>
+        <div class="servicos-subscribe-newsletter">
+            <span>NEWSLETTER ACP</span>
+            <span>Receba as novidades do clube</span>
+            <input type="submit" value="subscrever" class="submit-newsletter-btn">
+        </div>
+        <div class="newsletter-container">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <section id="acp-noticias">
+        <div class="noticias-container">
+            <h2 class="titulo-section">Notícias do Clube</h2>
+            <div class="noticias-row">
+                <div class="noticia-div">
+                    <img src="/img/ACP-Comunicados-lista.jpg" alt="comunicados acp">
+                    <span>18 novembro 2022</span>
+                    <br>
+                    <span class="noticia-link">Aumento das portagens</span>
+                </div>
+                <div class="noticia-div">
+                    <img src="/img/1-Rovanpera-Toyota-VRP-900.jpg" alt="raly portugal acp">
+                    <span>10 novembro 2022</span>
+                    <br>
+                    <span class="noticia-link">Vodafone Rally de Portugal com impacto económico recorde de 153,7 milhões de euros</span>
+                </div>
+                <div class="noticia-div">
+                    <h3>Últimas</h3>
+                    <br>
+                    <span>11 outubro 2022</span>
+                    <br>
+                    <p>Orçamento do Estado 2023</p>
+                    <span>04 outubro 2022</span>
+                    <br>
+                    <p>Inflação e desafios para a poupança</p>
+                    <span>16 setembro 2022</span>
+                    <br>
+                    <p>ACP Kids na Semana Europeia da Modalidade em Faro</p>
+                    <br>
+                    <a href="#" class="see-more-txt">Ver mais notícias <i class="fa-solid fa-angle-right"></i></a>
+                </div>
+            </div>
+    </section>
+    <section id="acp-revista">
+        <div class="revista-container">
+            <h2 class="titulo-section">Revista ACP</h2>
+            <div class="revista-menu">
+                <ul class="revista-menu-list">
+                    <li>todos</li><span>&nbsp&nbsp&nbsp&nbsp|</span>
+                    <li>atualidade</li><span>&nbsp&nbsp&nbsp&nbsp|</span>
+                    <li>lançamentos</li><span>&nbsp&nbsp&nbsp&nbsp|</span>
+                    <li>motos</li><span>&nbsp&nbsp&nbsp&nbsp|</span>
+                    <li>desporto</li><span>&nbsp&nbsp&nbsp&nbsp|</span>
+                    <li>clássicos</li><span>&nbsp&nbsp&nbsp&nbsp|</span>
+                    <li>golfe</li>
+                </ul>
+            </div>
+            <div class="revista-news-container">
+                <div class="revista-card">
+                    <img src="/img/noticias-card1.jfif" alt="">
+                    <span>GOLFE</span>
+                    <br>
+                    <span class="revista-link">Prémio dedicação ACP Golfe 2022</span>
+                </div>
+                <div class="revista-card">
+                    <img src="/img/noticias-card2.jpg" alt="">
+                    <span>DESPORTO</span>
+                    <br>
+                    <span class="revista-link">Forte possibilidade da Fórmula 1 regressar a Portugal</span>
+                </div>
+                <div class="revista-card">
+                    <img src="/img/noticias-card3.jpg" alt="">
+                    <span>LANÇAMENTOS</span>
+                    <br>
+                    <span class="revista-link">Novos fundamentos da Lexus com a novidade RZ e o novo RX</span>
+                </div>
+                <div class="revista-card">
+                    <img style="max-width:100%;width:100%;" src="https://i.ytimg.com/vi/vRPgWJ-XkDk/maxresdefault.jpg">
+                    <span>ATUALIDADE</span>
+                    <br>
+                    <span class="revista-link">Regras para trotinetes são urgentes</span>
+                </div>
+            </div>
+            <div class="row-ver-mais">
+                <a href="#" class="see-more-txt">Ver mais notícias <i class="fa-solid fa-angle-right"></i></a>
+            </div>
+        </div>
+    </section>
+    <div class="socio-banner">
+        <img src="/img/ACP-10-razoes-para-ser-socio-acp-home.jpg" alt="">
+        <div class="overlay">
+            <h2>Ainda não é sócio?</h2>
+            <p>Ligue-se a uma grande causa e viva todas as vantagens e <b>descontos</b> que o seu clube lhe oferece. 
+                Ao longo da sua vida, onde quer que esteja, estamos sempre consigo, a criar soluções que permitam 
+                facilitar o seu dia a dia e a melhorar a sua experiência de mobilidade.</p>
+            <a href="#" class="know-more-btn">CONHEÇA TODAS AS VANTAGENS</a>
+        </div>
+    </div>
+    <section id="acp-universo">
+        <div class="titulo-container">
+            <h2 class="titulo-section">Revista ACP</h2>
+        </div>
+        <div class="universo-acp-options">
+            <div class="universo-acp-opcao">
+                <div class="universo-acp-img-container">
+                    <img src="/img/ACP-Universo-Assistencia-Viagem.jpg" alt="">
+                </div>
+                <div class="universo-acp-description">
+                    <span>
+                        Assitência em viagem
+                    </span>
+                    <p>
+                        A única assistência que não o deixa parado
+                    </p>
+                </div>
+                <div class="universo-acp-know-more">
+                    <a href="#">saiba mais</a>
+                </div>
+            </div>
+            <div class="universo-acp-opcao">
+                <div class="universo-acp-img-container">
+                    <img src="/img//ACP-Universo-Plano-Saude-gratuito.jpg" alt="">
+                </div>
+                <div class="universo-acp-description">
+                    <span>
+                        Plano de saúde gratuito
+                    </span>
+                    <p>
+                        Os sócios ACP têm acesso aos melhores prestadores de saúde privados
+                    </p>
+                </div>
+                <div class="universo-acp-know-more">
+                    <a href="#">saiba mais</a>
+                </div>
+            </div>
+            <div class="universo-acp-opcao">
+                <div class="universo-acp-img-container">
+                    <img src="/img/ACP-Universo-Escola-Conducao.jpg" alt="">
+                </div>
+                <div class="universo-acp-description">
+                    <span>
+                        Escola de condução
+                    </span>
+                    <p>
+                        Tire a carta com o ACP: fácil, rápido e com resultados
+                    </p>
+                </div>
+                <div class="universo-acp-know-more">
+                    <a href="#">saiba mais</a>
+                </div>
+            </div>
+            <div class="universo-acp-opcao">
+                <div class="universo-acp-img-container">
+                    <img src="/img/ACP-Universo-Descontos-ACP.jpg" alt="">
+                </div>
+                <div class="universo-acp-description">
+                    <span>
+                        Descontos com o ACP
+                    </span>
+                    <p>
+                        Descubra como poupar em centenas de grandes marcas
+                    </p>
+                </div>
+                <div class="universo-acp-know-more">
+                    <a href="#">saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="home-highlights">
+        <div class="home-higlights-container">
+            <div class="home-higlights-cartao">
+                <img src="/img/card-discount.png" alt="">
+                <div class="home-higlights-cartao-text">
+                    <span>Descubra os descontos ACP</span>
+                    <p>O ACP oferece aos sócios um conjunto de <strong>vantagens</strong> e <strong>descontos</strong> 
+                        no setor automóvel e nas mais diversas áreas do turismo, decoração, desporto, saúde, lazer e outras.</p>        
+                </div>
+                <div class="home-highlights-know-more">
+                    <a href="#">saiba mais</a>
+                </div>
+            </div>
+            <div class="home-higlights-viagens">
+                <div class="home-higlights-viagens-image-selector">
+                    <input id="dot1" type = "radio" name="radio-btn" class="dot"></input>
+                    <input id="dot2" type = "radio" name="radio-btn" class="dot"></input>
+                    <input id="dot3" type = "radio" name="radio-btn" class="dot"></input>
+                    <input id="dot4" type = "radio" name="radio-btn" class="dot"></input>
+                    <input id="dot5" type = "radio" name="radio-btn" class="dot"></input>
+                  </div>
+                <div id="slider">
+
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
