@@ -161,6 +161,34 @@
             </div>
         </div>
     </div>
+    <div class="mobile-form-container">
+        <div id="selling-price-form-container-mob" class="selling-price-form-container-mob">
+            <form id="selling-price-form-mob" onsubmit="return getCotacaoVenda(event)"> 
+                <span>Calcule o valor do seu carro</span>
+                <div class="form-column">
+                    <label class="form-label" for="marca">Marca:</label><br>
+                    <input type="text" id="marca" name="marca"><br>
+                    <label class="form-label" for="modelo">Modelo:</label><br>
+                    <input type="text" id="modelo" name="modelo"><br>
+                    <label class="form-label" for="anoRegisto">Ano de compra:</label><br>
+                    <input type="number" id="anoRegisto" name="anoRegisto"><br>
+                </div>
+                <div class="form-column">
+                    <label class="form-label" for="kms">Km's:</label><br>
+                    <input type="number" id="kms" name="kms" min="1"><br>
+                    <label class="form-label" for="precoCompra">Preço de compra:</label><br>
+                    <input type="number" id="precoCompra" name="precoCompra" min="1" step="any"><br>
+                </div>
+                <button class="form-submit-btn" type="submit"><span>Calcular</span></button>
+            </form>
+            <div id="form-result-mob" class="form-result-mob">
+                <span id="titulo-valor-carro" class="titulo-valor-carro"></span>
+                <p id="valor-carro" class="valor-carro"></p>
+                <a class="call-btn" href="+351912380473">Contactem-me</a>
+                <p class="aviso-valor">Este valor serve apenas como referência. Peça um contacto para saber mais.</p>
+            </div>
+        </div>
+    </div>
     <div class="servicos-container">
         <ul class="servicos-list">
             <li><img src="/img/submenu_assistencia.png" alt="assistência acp"><span>assistência</span></li>
