@@ -116,7 +116,17 @@ body {
     flex-wrap: nowrap;
 }
 
-/*@media screen and (min-width: 768px)*/
+.header-container {
+    .logo-container {
+        .burger-menu {
+            background: black;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }           
+    }
+}
 
 @media screen and (min-width: 971px) {
 
@@ -241,129 +251,151 @@ body {
         padding-left: 30px;
         border-bottom: 1px solid #ededed;
         justify-content: center;
+
+        .burger-menu {
+            display: none;
+        }
+
+        .logo-search-container {
+            grid-column: 1/2;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            @include flex-row;
+            width: fit-content;
+            height: auto;
+        }
+
+        .logo {
+            display: block;
+            width: $logo-width;
+            height: $logo-height;
+        }
+
+        .search-bar {
+            border-right: 1px solid #ededed;
+            padding-right: 30px;
+            background: #fff;
+            border: 0;
+            margin-left: 30px;
+            @include flex-row;
+            align-content: center;
+
+            input {
+                line-height: 64px;
+                border: 0;
+                display: none;
+                font-size: 1.5em;
+            }
+
+            .search-btn {
+                margin-left: auto;
+                background-color: transparent;
+                border: 0;
+                font-size: 1.7em;
+                cursor: pointer;
+            }
+
+            .close-search {
+                display: none;
+                max-width: fit-content;
+                border-left: 1px solid #ededed;
+            }
+
+            .search-btn:hover {
+                color: $vermelho
+            }
+        }
+
+        .contacto-newsletter-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            align-items: center;
+            justify-items: center;
+            position: absolute;
+            right: 0;
+            width: 400px;
+            height: 100px;
+            border-left: 1px solid #ededed;
+
+            .telefone-container {
+                grid-column: 1/2;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-flex-wrap: nowrap;
+                -ms-flex-wrap: nowrap;
+                flex-wrap: nowrap;
+                text-align: center;
+                gap: 0px;
+                line-height: normal;
+                align-items: center;
+                justify-content: center;
+                padding-left: 20px;
+                padding-right: 20px;
+
+                .tel-horario {
+                    font-size: 12px;
+                }
+
+                .tel-rede {
+                    font-size: 9px;
+                }
+
+                a {
+                    color: $vermelho;
+                    cursor: pointer;
+                    font-size: 1.7em;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+            }
+
+            .socio-container {
+                grid-column: 2/3;
+                background-color: $vermelho;
+                height: 48px;
+                line-height: 48px;
+                text-align: center;
+                cursor: pointer;
+                width: 168px;
+
+                .socio-btn {
+                    font-family: elliot-bold;
+                    color: #fff;
+                    display: inline-block;
+                    width: 168px;
+                    text-decoration: none;
+                }
+            }
+
+        }
+
+        .container-menuDesktop {
+            height: 50px;
+        }
     }
 
-    .header-container .logo-container .logo-search-container {
-        grid-column: 1/2;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        @include flex-row;
-        width: fit-content;
-        height: auto;
-    }
-
-    .header-container .logo-container .logo {
-        display: block;
-        width: $logo-width;
-        height: $logo-height;
-    }
-
-    .header-container .logo-container .search-bar {
-        border-right: 1px solid #ededed;
-        padding-right: 30px;
-        background: #fff;
-        border: 0;
-        margin-left: 30px;
-        @include flex-row;
-        align-content: center;
-    }
-
-    .header-container .logo-container .search-bar input {
-        line-height: 64px;
-        border: 0;
-        display: none;
-        font-size: 1.5em;
-    }
-
-    .header-container .logo-container .search-bar .search-btn {
-        margin-left: auto;
-        background-color: transparent;
-        border: 0;
-        font-size: 1.7em;
-        cursor: pointer;
-    }
-
-    .header-container .logo-container .search-bar .close-search {
-        display: none;
-        max-width: fit-content;
-        border-left: 1px solid #ededed;
-    }
-
-    .header-container .logo-container .search-bar .search-btn:hover {
-        color: $vermelho
-    }
-
-    .header-container .logo-container .contacto-newsletter-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr;
-        align-items: center;
-        justify-items: center;
-        position: absolute;
-        right: 0;
-        width: 400px;
-        height: 100px;
-        border-left: 1px solid #ededed;
-
-    }
-
-    .header-container .logo-container .contacto-newsletter-container .telefone-container {
-        grid-column: 1/2;
-        display: -ms-flexbox;
-        display: -webkit-flex;
+    .header-container .container-menuDesktop .menu-desktop {
         display: flex;
-        -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
+        flex-direction: row;
         flex-wrap: nowrap;
-        text-align: center;
-        gap: 0px;
-        line-height: normal;
-        align-items: center;
-        justify-content: center;
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .header-container .logo-container .contacto-newsletter-container .telefone-container .tel-horario {
-        font-size: 12px;
-    }
-
-    .header-container .logo-container .contacto-newsletter-container .telefone-container .tel-rede {
-        font-size: 9px;
-    }
-
-    .header-container .logo-container .contacto-newsletter-container .telefone-container a {
-        color: $vermelho;
-        cursor: pointer;
-        font-size: 1.7em;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-    .header-container .logo-container .contacto-newsletter-container .socio-container {
-        grid-column: 2/3;
-        background-color: $vermelho;
-        height: 48px;
-        line-height: 48px;
-        text-align: center;
-        cursor: pointer;
-        width: 168px;
-    }
-
-    .header-container .logo-container .contacto-newsletter-container .socio-btn {
+        justify-content:center;
+        list-style-type: none; 
+        gap: 5%; 
         font-family: elliot-bold;
-        color: #fff;
-        display: inline-block;
-        width: 168px;
-        text-decoration: none;
-    }
+        text-transform: uppercase;
+        margin: 10px 0vw 15px 0vw;
 
-    .header-container .container-menuDesktop {
-        height: 50px;
+        li:hover {
+            cursor: pointer;
+            color:$vermelho;
+        }
     }
+}
 
     .noticias-container {
         margin-right: auto;
@@ -525,24 +557,6 @@ body {
     .revista-container .revista-menu .revista-menu-list li:hover {
         color:$vermelho;
         cursor: pointer;
-    }
-}
-
-    .header-container .container-menuDesktop .menu-desktop {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content:center;
-        list-style-type: none; 
-        gap: 5%; 
-        font-family: elliot-bold;
-        text-transform: uppercase;
-        margin: 10px 0vw 15px 0vw;
-    }
-
-    .header-container .container-menuDesktop .menu-desktop li:hover {
-        cursor: pointer;
-        color:$vermelho;
     }
 
    /*image slider*/

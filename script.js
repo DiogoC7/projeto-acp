@@ -9,6 +9,15 @@ const slide5 = document.querySelector('#dot5-label');
 //scroll function para mudar o menu quando o user faz scroll
 window.onscroll = function() {scrollFunction()};
 
+function burgerMenu() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
 slide1.addEventListener('click', () => {
     dotsLabels.forEach(label => {
         label.style.backgroundColor = '#ddd';
