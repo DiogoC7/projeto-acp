@@ -6,17 +6,16 @@ const slide3 = document.querySelector('#dot3-label');
 const slide4 = document.querySelector('#dot4-label');
 const slide5 = document.querySelector('#dot5-label');
 
-//scroll function para mudar o menu quando o user faz scroll
-window.onscroll = function() {scrollFunction()};
+//side menu
 
-function burgerMenu() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
+const burgerBtn = document.getElementById('burger-btn');
+const sideMenu = document.getElementById('side-menu');
+
+burgerBtn.addEventListener('click', () => {
+  sideMenu.classList.toggle('active');
+});
+
+//slides
 
 slide1.addEventListener('click', () => {
     dotsLabels.forEach(label => {
