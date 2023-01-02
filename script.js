@@ -1,10 +1,13 @@
 //botões
-const dotsLabels = document.querySelectorAll('.manual-btn');
+const dotsLabels = document.querySelectorAll('.dots-btn');
+const dotsNoticiasLabels = document.querySelectorAll('.dots-noticias-btn');
 const slide1 = document.querySelector('#dot1-label');
 const slide2 = document.querySelector('#dot2-label');
 const slide3 = document.querySelector('#dot3-label');
 const slide4 = document.querySelector('#dot4-label');
 const slide5 = document.querySelector('#dot5-label');
+const noticia1 = document.querySelector('#dot1-noticias-label');
+const noticia2 = document.querySelector('#dot2-noticias-label');
 
 //side menu
 
@@ -56,6 +59,21 @@ function scrollFunction() {
 
   }
 }
+
+//noticias slide
+
+noticia1.addEventListener('click', () => {
+  dotsNoticiasLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot1-noticias-label').style.background = '#f0050a';
+});
+noticia2.addEventListener('click', () => {
+  dotsNoticiasLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot2-noticias-label').style.background = '#f0050a';
+});
 
 // cotação para preço de venda de carro usado
 
