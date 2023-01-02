@@ -697,26 +697,22 @@ body {
                     &:hover {
                         @include link-hover;
                     }
+                }
+                .see-more-txt {
+                    float: right;
+                    @include see-more-txt;
 
-                    a {
-                        .see-more-txt {
-                            float: right;
-                            @include see-more-txt;
-                        }
-    
-                        .fa-angle-right{
-                            @include seta-ver-mais;
-    
+                    .fa-angle-right{
+                        @include seta-ver-mais;
                             &:hover{ 
-                                @include seta-ver-mais-hover;
+                            @include seta-ver-mais-hover;
                             }
-                        }   
-                    }
+                        }  
+                    }    
                 }
             }
         }
     }
-}
     
 
    /*image slider*/
