@@ -51,15 +51,6 @@ slide5.addEventListener('click', () => {
     document.getElementById('dot5-label').style.background = '#f0050a';
 });
 
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-  } else {
-
-  }
-}
-
 //noticias slide
 
 noticia1.addEventListener('click', () => {

@@ -126,6 +126,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
+    border-bottom: 1px solid #ededed;
 
     .top-nav {
         display: none;
@@ -137,19 +138,28 @@ body {
         grid-template-rows: 1fr;
         align-items: center;
         height: 60px;
-        padding-left: 30px;
+        padding-left: 20px;
         justify-content: center;
         margin: 20px 0;
         
         .burger-menu {
             background-color: #fff;
             display: block;
-            font-size: 1.8em;
+            font-size: 1.6em;
             color: black;
             border: 0;
             cursor: pointer;
             margin-left: 0;
         }           
+
+        .logo {
+            display: block;
+            
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
 
         .side-menu {
             position: fixed;
@@ -573,8 +583,8 @@ body {
     
                 .dots-noticias-btn {
                     z-index: 10;
-                    height: calc(5px + 12px);
-                    width: calc(5px + 12px);
+                    height: 10px;
+                    width: 10px;
                     background: #ddd;
                     border-radius: 10px;
                     transition: 1s;
