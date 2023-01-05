@@ -1,6 +1,7 @@
 //botões
 const dotsLabels = document.querySelectorAll('.dots-btn');
 const dotsNoticiasLabels = document.querySelectorAll('.dots-noticias-btn');
+const dotsViagensLabels = document.querySelectorAll('.dots-viagens-btn');
 const slide1 = document.querySelector('#dot1-label');
 const slide2 = document.querySelector('#dot2-label');
 const slide3 = document.querySelector('#dot3-label');
@@ -8,6 +9,11 @@ const slide4 = document.querySelector('#dot4-label');
 const slide5 = document.querySelector('#dot5-label');
 const noticia1 = document.querySelector('#dot1-noticias-label');
 const noticia2 = document.querySelector('#dot2-noticias-label');
+const viagem1 = document.getElementById('dot1-viagens-label');
+const viagem2 = document.getElementById('dot2-viagens-label');
+const viagem3 = document.getElementById('dot3-viagens-label');
+const viagem4 = document.getElementById('dot4-viagens-label');
+const viagem5 = document.getElementById('dot5-viagens-label');
 
 //side menu
 
@@ -65,6 +71,40 @@ noticia2.addEventListener('click', () => {
     });
   document.getElementById('dot2-noticias-label').style.background = '#f0050a';
 });
+
+//viagens slide
+
+viagem1.addEventListener('click', () => {
+  dotsViagensLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot1-viagens-label').style.background = '#f0050a';
+});
+viagem2.addEventListener('click', () => {
+  dotsViagensLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot2-viagens-label').style.background = '#f0050a';
+});
+viagem3.addEventListener('click', () => {
+  dotsViagensLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot3-viagens-label').style.background = '#f0050a';
+});
+viagem4.addEventListener('click', () => {
+  dotsViagensLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot4-viagens-label').style.background = '#f0050a';
+});
+viagem5.addEventListener('click', () => {
+  dotsViagensLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot5-viagens-label').style.background = '#f0050a';
+});
+
 
 // cotação para preço de venda de carro usado
 
