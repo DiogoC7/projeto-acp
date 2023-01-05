@@ -220,14 +220,8 @@ body {
 
     /*barra de navegação superior com fundo cinzento claro. flex porque os elementos estão todos seguidos*/
         .top-nav {
-            display: -ms-flexbox;
-            display: -webkit-flex;
             display: flex;
-            -webkit-flex-direction: row-reverse;
-            -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-            -webkit-flex-wrap: nowrap;
-            -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
             background-color: #f2f2f2;
             line-height: 38px;
@@ -246,66 +240,36 @@ body {
                 }
                 &:nth-child(1) {
                     color: $vermelho;
-                    -webkit-order: 0;
-                    -ms-flex-order: 0;
                     order: 0;
-                    -webkit-flex: 0 1 auto;
-                    -ms-flex: 0 1 auto;
                     flex: 0 1 auto;
-                    -webkit-align-self: auto;
-                    -ms-top-nav-item-align: auto;
                     align-self: auto;
                     margin-right: 20px;
                     margin-left: 35px;
                 }
             
                 &:nth-child(2) {
-                    -webkit-order: 0;
-                    -ms-flex-order: 0;
                     order: 0;
-                    -webkit-flex: 0 1 auto;
-                    -ms-flex: 0 1 auto;
                     flex: 0 1 auto;
-                    -webkit-align-self: auto;
-                    -ms-top-nav-item-align: auto;
                     align-self: auto;
                     margin-left: 30px;
                 }
             
                 &:nth-child(3) {
-                    -webkit-order: 0;
-                    -ms-flex-order: 0;
                     order: 0;
-                    -webkit-flex: 0 1 auto;
-                    -ms-flex: 0 1 auto;
                     flex: 0 1 auto;
-                    -webkit-align-self: auto;
-                    -ms-top-nav-item-align: auto;
                     align-self: auto;
                     margin-left: 45px;
                 }
             
                 &:nth-child(4) {
-                    -webkit-order: 0;
-                    -ms-flex-order: 0;
                     order: 0;
-                    -webkit-flex: 0 1 auto;
-                    -ms-flex: 0 1 auto;
                     flex: 0 1 auto;
-                    -webkit-align-self: auto;
-                    -ms-top-nav-item-align: auto;
                     align-self: auto;
                 }
             
                 &:nth-child(5) {
-                    -webkit-order: 0;
-                    -ms-flex-order: 0;
                     order: 0;
-                    -webkit-flex: 0 1 auto;
-                    -ms-flex: 0 1 auto;
                     flex: 0 1 auto;
-                    -webkit-align-self: auto;
-                    -ms-top-nav-item-align: auto;
                     align-self: auto;
                     margin-right: 50px;
                 }
