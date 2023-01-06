@@ -45,17 +45,6 @@
             <button id="burger-btn" class="burger-menu">
                 <i class="fa fa-bars"></i>
             </button>
-
-           <!-- <nav id="side-menu" class="side-menu">
-                <ul>
-                    <li><a href="#">o clube</a></li>
-                    <li><a href="#">serviços</a></li>
-                    <li><a href="#">veículos</a></li>
-                    <li><a href="#">saúde e seguros</a></li>
-                    <li><a href="#">viagens e lazer</a></li>
-                    <li><a href="#">desporto automóvel</a></li>
-                </ul>
-            </nav> -->
             <div class="logo">
                 <a href="#" target="_self"><img src="/img/logo_acp.png" alt="logo-acp"></a>
             </div>
@@ -89,10 +78,7 @@
         <div class="container-menuDesktop">
             <nav>
                 <div class="menu-wrapper">
-                    <input type="radio" name="menu-slider" id="menu-btn">
-                    <input type="radio" name="menu-slider" id="menu-close-btn">
                     <ul class="menu-desktop">
-                        <label for="menu-close-btn" class="btn menu-close-btn"><i class="fas fa-times"></i></label>
                         <li>o clube</li>
                         <li>serviços</li>
                         <li>veículos</li>
@@ -148,8 +134,18 @@
                 </form>
                 <div id="form-result" class="form-result">
                     <span id="titulo-valor-carro" class="titulo-valor-carro"></span>
-                    <p id="valor-carro" class="valor-carro"></p>
-                    <a class="call-btn" href="+351912380473">Contactem-me</a>
+                    <div class="mau-estado">
+                        <span>Mau Estado</span>
+                        <p id="valor-carro-mau" class="valor-carro"></p>
+                    </div>
+                    <div class="bom-estado">
+                        <span>Bom Estado</span>
+                        <p id="valor-carro-bom" class="valor-carro"></p>
+                    </div>
+                    <div class="excelente-estado">
+                        <span>Excelente Estado</span>
+                        <p id="valor-carro-excelente" class="valor-carro"></p>
+                    </div>
                     <p class="aviso-valor">Este valor serve apenas como referência. Peça um contacto para saber mais.</p>
                 </div>
             </div>
@@ -189,9 +185,19 @@
             </form>
             <div id="form-result-mob" class="form-result-mob">
                 <span id="titulo-valor-carro" class="titulo-valor-carro"></span>
-                <p id="valor-carro" class="valor-carro"></p>
-                <a class="call-btn" href="+351912380473">Contactem-me</a>
-                <p class="aviso-valor">Este valor serve apenas como referência. Peça um contacto para saber mais.</p>
+                    <div class="mau-estado">
+                        <span>Mau Estado</span>
+                        <p id="valor-carro-mau-mb" class="valor-carro"></p>
+                    </div>
+                    <div class="bom-estado">
+                        <span>Bom Estado</span>
+                        <p id="valor-carro-bom-mb" class="valor-carro"></p>
+                    </div>
+                    <div class="excelente-estado">
+                        <span>Excelente Estado</span>
+                        <p id="valor-carro-excelente-mb" class="valor-carro"></p>
+                    </div>
+                    <p class="aviso-valor">Este valor serve apenas como referência. Peça um contacto para saber mais.</p>
             </div>
         </div>
     </div>
@@ -275,6 +281,40 @@
                 </div>
             </div>
     </section>
+
+    <section id="financiamento-section">
+        <div id="financiamento-form-container" class="financiamento-form-container">
+            <form id="financiamento-form" onsubmit="return financiamento(event)"> 
+                <span>Obtenha financiamento para o seu carro novo</span>
+                <div class="form-column">
+                    <label class="form-label" for="montanteTotal">Montante total:</label><br>
+                    <input type="range" name="montanteTotal" id="montanteTotal" min="0" max="999999" value="500000" onchange="updateProposta()">
+                    <label class="form-label" for="entradaInicial">Entrada inicial:</label><br>
+                    <input type="range" name="entradaInicial" id="entradaInicial" min="0" max="999999" value="100000" onchange="updateProposta()">
+                    <label class="form-label" for="prazoPagamento">prazo (anos):</label><br>
+                    <input type="range" name="prazoPagamento" id="prazoPagamento" min="1" max="60" value="24" onchange="updateProposta()">
+                </div>
+                <button class="form-submit-btn" type="submit">Calcular</button>
+            </form>
+            <div id="form-result" class="form-result">
+                <span id="titulo-valor-carro" class="titulo-valor-carro"></span>
+                <div class="mau-estado">
+                    <span>Mau Estado</span>
+                    <p id="valor-carro-mau" class="valor-carro"></p>
+                </div>
+                <div class="bom-estado">
+                    <span>Bom Estado</span>
+                    <p id="valor-carro-bom" class="valor-carro"></p>
+                </div>
+                <div class="excelente-estado">
+                    <span>Excelente Estado</span>
+                    <p id="valor-carro-excelente" class="valor-carro"></p>
+                </div>
+                <p class="aviso-valor">Este valor serve apenas como referência. Peça um contacto para saber mais.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="acp-revista">
         <div class="revista-container">
             <h2 class="titulo-section">Revista ACP</h2>
@@ -331,9 +371,7 @@
         </div>
     </div>
     <section id="acp-universo">
-        <div class="titulo-container">
-            <h2 class="titulo-section">Revista ACP</h2>
-        </div>
+            <h2 class="titulo-section">Universo ACP</h2>
         <div class="universo-acp-options">
             <div class="universo-acp-opcao">
                 <div class="universo-acp-img-container">
@@ -471,6 +509,77 @@
                     <label for="dot4-viagens" id="dot4-viagens-label" class="dots-viagens-btn"> </label>
                     <label for="dot5-viagens" id="dot5-viagens-label" class="dots-viagens-btn"></label>
                 </div>              
+            </div>
+        </div>
+    </section>
+    <section id="acp-eventos">
+        <div class="titulo-container">
+            <h2 class="titulo-section">Eventos que nos fazem viajar</h2>
+        </div>
+        <div class="eventos-acp-options">
+            <div class="eventos-acp-opcao">
+                <div class="eventos-acp-img-container">
+                    <img src="/img/ACP-Universo-Assistencia-Viagem.jpg" alt="">
+                </div>
+                <div class="eventos-acp-description">
+                    <span>
+                        Assitência em viagem
+                    </span>
+                    <p>
+                        A única assistência que não o deixa parado
+                    </p>
+                </div>
+                <div class="eventos-acp-know-more">
+                    <a href="#">saiba mais</a>
+                </div>
+            </div>
+            <div class="eventos-acp-opcao">
+                <div class="eventos-acp-img-container">
+                    <img src="/img//ACP-Universo-Plano-Saude-gratuito.jpg" alt="">
+                </div>
+                <div class="eventos-acp-description">
+                    <span>
+                        Plano de saúde gratuito
+                    </span>
+                    <p>
+                        Os sócios ACP têm acesso aos melhores prestadores de saúde privados
+                    </p>
+                </div>
+                <div class="eventos-acp-know-more">
+                    <a href="#">saiba mais</a>
+                </div>
+            </div>
+            <div class="eventos-acp-opcao">
+                <div class="eventos-acp-img-container">
+                    <img src="/img/ACP-Universo-Escola-Conducao.jpg" alt="">
+                </div>
+                <div class="eventos-acp-description">
+                    <span>
+                        Escola de condução
+                    </span>
+                    <p>
+                        Tire a carta com o ACP: fácil, rápido e com resultados
+                    </p>
+                </div>
+                <div class="eventos-acp-know-more">
+                    <a href="#">saiba mais</a>
+                </div>
+            </div>
+            <div class="eventos-acp-opcao">
+                <div class="eventos-acp-img-container">
+                    <img src="/img/ACP-Universo-Descontos-ACP.jpg" alt="">
+                </div>
+                <div class="eventos-acp-description">
+                    <span>
+                        Descontos com o ACP
+                    </span>
+                    <p>
+                        Descubra como poupar em centenas de grandes marcas
+                    </p>
+                </div>
+                <div class="eventos-acp-know-more">
+                    <a href="#">saiba mais</a>
+                </div>
             </div>
         </div>
     </section>

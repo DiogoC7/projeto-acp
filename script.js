@@ -128,13 +128,51 @@ function getCotacaoVenda(event) {
   const precoFinal = precoCompra * depreciação * coeficienteDepreciacaoKms;
   // Retornar o preço final (não inferior a 500€)
   const result = precoFinal < 500 ? 500 : precoFinal;
+
+  const mauEstado = result * 0.60;
+  const bomEstado = result * 1;
+  const excelenteEstado = result *1.1;
   
   document.getElementById('titulo-valor-carro').innerHTML = `Aproveite já e troque o seu ${marca} ${modelo}. <br> Nós ajudamos com:`;
-  document.getElementById('valor-carro').innerHTML = `${result.toFixed(2)}€`;
+  document.getElementById('valor-carro-mau').innerHTML = `${mauEstado.toFixed(2)}€`;
+  document.getElementById('valor-carro-bom').innerHTML = `${bomEstado.toFixed(2)}€`;
+  document.getElementById('valor-carro-excelente').innerHTML = `${excelenteEstado.toFixed(2)}€`;
+  document.getElementById('valor-carro-mau-mb').innerHTML = `${mauEstado.toFixed(2)}€`;
+  document.getElementById('valor-carro-bom-mb').innerHTML = `${bomEstado.toFixed(2)}€`;
+  document.getElementById('valor-carro-excelente-mb').innerHTML = `${excelenteEstado.toFixed(2)}€`;
   document.getElementById('selling-price-form').style.display = "none";
+  document.getElementById('selling-price-form-mob').style.display = "none";
   document.getElementById('form-result').style.display = "grid";
-  document.getElementById('form-result').style.gridTemplateColumns = "2fr 1fr";
+  document.getElementById('form-result').style.gridTemplateColumns = "1fr 1fr 1fr";
+  document.getElementById('form-result').style.gap = "2%";
   document.getElementById('form-result').style.gridTemplateRows = "1fr 2fr 1fr";
+  document.getElementById('form-result-mob').style.display = "grid";
+  document.getElementById('form-result-mob').style.gridTemplateColumns = "1fr 1fr 1fr";
+  document.getElementById('form-result-mob').style.gap = "2%";
+  document.getElementById('form-result-mob').style.gridTemplateRows = "1fr 2fr 1fr";
   document.getElementById('selling-price-form-container').style.top = '33%';
   return;
+}
+
+//financiamento
+function financiamento(montanteTotal) {
+  // Lê os valores de entrada inicial, montante financiado e prazo em meses
+  var entradaInicial = document.getElementById('entradaInicial').value;
+  var montanteFinanciado = montanteTotal - entradaInicial;
+  var prazo = document.getElementById('prazo').value;
+
+  // Gera 3 valores aleatórios de spread entre 1% e 5%
+  var spread1 = Math.random() * 4 + 1;
+  var spread2 = Math.random() * 4 + 1;
+  var spread3 = Math.random() * 4 + 1;
+
+  // Calcula a taxa de juro total para cada um dos 3 cenários, adicionando o spread ao valor base de 5%
+  var taxaJuro1 = 5 + spread1;
+  var taxaJuro2 = 5 + spread2;
+  var taxaJuro3 = 5 + spread3;
+
+  // Calcula o valor da prestação mensal para cada um dos 3 cenários
+  var prestacao1 = montanteTotal / ((1 - Math.pow(1 + taxaJuro1/100, -prazo)) / (taxaJuro1/100));
+  var prestacao2 = montanteTotal / ((1 - Math.pow(1 + taxaJuro2/100, -prazo)) / (taxaJuro2/100));
+  var prestacao3 = montanteTotal / ((1 - Math.pow(1 + taxaJuro3/100, -prazo)) / (taxaJuro3/100));
 }
