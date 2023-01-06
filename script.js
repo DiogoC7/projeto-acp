@@ -9,6 +9,10 @@ const slide4 = document.querySelector('#dot4-label');
 const slide5 = document.querySelector('#dot5-label');
 const noticia1 = document.querySelector('#dot1-noticias-label');
 const noticia2 = document.querySelector('#dot2-noticias-label');
+const universo1 = document.querySelector('#dot1-universo-label');
+const universo2 = document.querySelector('#dot2-universo-label');
+const universo3 = document.querySelector('#dot3-universo-label');
+const universo4 = document.querySelector('#dot4-universo-label');
 const viagem1 = document.getElementById('dot1-viagens-label');
 const viagem2 = document.getElementById('dot2-viagens-label');
 const viagem3 = document.getElementById('dot3-viagens-label');
@@ -72,6 +76,55 @@ noticia2.addEventListener('click', () => {
   document.getElementById('dot2-noticias-label').style.background = '#f0050a';
 });
 
+//universo slider
+const universoFirst = document.querySelector('.universo-opcao1');
+
+universo1.addEventListener('click', () => {
+  dotsViagensLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot1-universo-label').style.background = '#f0050a';
+});
+universo2.addEventListener('click', () => {
+  dotsViagensLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot2-universo-label').style.background = '#f0050a';
+});
+universo3.addEventListener('click', () => {
+  dotsViagensLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot3-universo-label').style.background = '#f0050a';
+});
+universo4.addEventListener('click', () => {
+  dotsViagensLabels.forEach(label => {
+      label.style.backgroundColor = '#ddd';
+    });
+  document.getElementById('dot4-universo-label').style.background = '#f0050a';
+});
+
+universo1.addEventListener('click', () => {
+  document.getElementById('universo-primeiro').style.marginLeft= '0';
+});
+universo2.addEventListener('click', () => {
+  document.getElementById('universo-primeiro').style.marginLeft = '-100%';
+});
+universo3.addEventListener('click', () => {
+  document.getElementById('universo-primeiro').style.marginLeft = '-200%';
+});
+universo4.addEventListener('click', () => {
+  document.getElementById('universo-primeiro').style.marginLeft = '-300%';
+});
+
+function checkWindowWidth() {
+  if (window.innerWidth > 768) {
+    document.getElementById('universo-primeiro').style.marginLeft= '0';
+  }
+}
+window.addEventListener('resize', checkWindowWidth);
+checkWindowWidth();
+
 //viagens slide
 
 viagem1.addEventListener('click', () => {
@@ -105,6 +158,23 @@ viagem5.addEventListener('click', () => {
   document.getElementById('dot5-viagens-label').style.background = '#f0050a';
 });
 
+const viagemFirst = document.querySelector('.viagem-first');
+
+viagem1.addEventListener('click', () => {
+document.getElementById('viagens-primeiro').style.marginLeft= '0';
+});
+viagem2.addEventListener('click', () => {
+document.getElementById('viagens-primeiro').style.marginLeft = '-100%';
+});
+viagem3.addEventListener('click', () => {
+document.getElementById('viagens-primeiro').style.marginLeft = '-200%';
+});
+viagem4.addEventListener('click', () => {
+document.getElementById('viagens-primeiro').style.marginLeft = '-300%';
+});
+viagem5.addEventListener('click', () => {
+document.getElementById('viagens-primeiro').style.marginLeft = '-400%';
+});
 
 // cotação para preço de venda de carro usado
 

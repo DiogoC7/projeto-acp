@@ -392,71 +392,85 @@
     </div>
     <section id="acp-universo">
             <h2 class="titulo-section">Universo ACP</h2>
+            <div class="universo-selector">
+                <input class="radio-input" id="dot1-universo" type = "radio" name="radio-btn" class="dot"></input>
+                <input class="radio-input" id="dot2-universo" type = "radio" name="radio-btn" class="dot"></input>
+                <input class="radio-input" id="dot3-universo" type = "radio" name="radio-btn" class="dot"></input>
+                <input class="radio-input" id="dot4-universo" type = "radio" name="radio-btn" class="dot"></input>
+            </div>
         <div class="universo-acp-options">
-            <div class="universo-acp-opcao">
-                <div class="universo-acp-img-container">
-                    <img src="/img/ACP-Universo-Assistencia-Viagem.jpg" alt="">
+            <div class="universo-options-mb">
+                <div id="universo-primeiro" class="universo-acp-opcao universo-opcao1">
+                    <div class="universo-acp-img-container">
+                        <img src="/img/ACP-Universo-Assistencia-Viagem.jpg" alt="">
+                    </div>
+                    <div class="universo-acp-description">
+                        <span>
+                            Assitência em viagem
+                        </span>
+                        <p>
+                            A única assistência que não o deixa parado
+                        </p>
+                    </div>
+                    <div class="universo-acp-know-more">
+                        <a href="#">saiba mais</a>
+                    </div>
                 </div>
-                <div class="universo-acp-description">
-                    <span>
-                        Assitência em viagem
-                    </span>
-                    <p>
-                        A única assistência que não o deixa parado
-                    </p>
+                <div class="universo-acp-opcao">
+                    <div class="universo-acp-img-container">
+                        <img src="/img/ACP-Universo-Plano-Saude-gratuito.jpg" alt="">
+                    </div>
+                    <div class="universo-acp-description">
+                        <span>
+                            Plano de saúde gratuito
+                        </span>
+                        <p>
+                            Os sócios ACP têm acesso aos melhores prestadores de saúde privados
+                        </p>
+                    </div>
+                    <div class="universo-acp-know-more">
+                        <a href="#">saiba mais</a>
+                    </div>
                 </div>
-                <div class="universo-acp-know-more">
-                    <a href="#">saiba mais</a>
+                <div class="universo-acp-opcao">
+                    <div class="universo-acp-img-container">
+                        <img src="/img/ACP-Universo-Escola-Conducao.jpg" alt="">
+                    </div>
+                    <div class="universo-acp-description">
+                        <span>
+                            Escola de condução
+                        </span>
+                        <p>
+                            Tire a carta com o ACP: fácil, rápido e com resultados
+                        </p>
+                    </div>
+                    <div class="universo-acp-know-more">
+                        <a href="#">saiba mais</a>
+                    </div>
+                </div>
+                <div class="universo-acp-opcao">
+                    <div class="universo-acp-img-container">
+                        <img src="/img/ACP-Universo-Descontos-ACP.jpg" alt="">
+                    </div>
+                    <div class="universo-acp-description">
+                        <span>
+                            Descontos com o ACP
+                        </span>
+                        <p>
+                            Descubra como poupar em centenas de grandes marcas
+                        </p>
+                    </div>
+                    <div class="universo-acp-know-more">
+                        <a href="#">saiba mais</a>
+                    </div>
                 </div>
             </div>
-            <div class="universo-acp-opcao">
-                <div class="universo-acp-img-container">
-                    <img src="/img/ACP-Universo-Plano-Saude-gratuito.jpg" alt="">
-                </div>
-                <div class="universo-acp-description">
-                    <span>
-                        Plano de saúde gratuito
-                    </span>
-                    <p>
-                        Os sócios ACP têm acesso aos melhores prestadores de saúde privados
-                    </p>
-                </div>
-                <div class="universo-acp-know-more">
-                    <a href="#">saiba mais</a>
-                </div>
-            </div>
-            <div class="universo-acp-opcao">
-                <div class="universo-acp-img-container">
-                    <img src="/img/ACP-Universo-Escola-Conducao.jpg" alt="">
-                </div>
-                <div class="universo-acp-description">
-                    <span>
-                        Escola de condução
-                    </span>
-                    <p>
-                        Tire a carta com o ACP: fácil, rápido e com resultados
-                    </p>
-                </div>
-                <div class="universo-acp-know-more">
-                    <a href="#">saiba mais</a>
-                </div>
-            </div>
-            <div class="universo-acp-opcao">
-                <div class="universo-acp-img-container">
-                    <img src="/img/ACP-Universo-Descontos-ACP.jpg" alt="">
-                </div>
-                <div class="universo-acp-description">
-                    <span>
-                        Descontos com o ACP
-                    </span>
-                    <p>
-                        Descubra como poupar em centenas de grandes marcas
-                    </p>
-                </div>
-                <div class="universo-acp-know-more">
-                    <a href="#">saiba mais</a>
-                </div>
-            </div>
+            <div class="dots-container">
+                <label for="dot1-universo" id="dot1-universo-label" class="dots-universo-btn"></label>
+                <label for="dot2-universo" id="dot2-universo-label" class="dots-universo-btn"></label>
+                <label for="dot3-universo" id="dot3-universo-label" class="dots-universo-btn"></label>
+                <label for="dot4-universo" id="dot4-universo-label" class="dots-universo-btn"> </label>
+            </div> 
         </div>
     </section>
     <section id="home-highlights">
@@ -481,7 +495,7 @@
                     <input class="radio-input" id="dot5-viagens" type = "radio" name="radio-btn" class="dot"></input>
                 </div>
                 <div class="viagens-slides-container">
-                  <div class="viagens-slide viagem-first">
+                  <div id="viagens-primeiro" class="viagens-slide viagem-first">
                       <img src="/img/viagens1.webp" alt="comunicados acp">
                       <strong>2023</strong>
                       <br>

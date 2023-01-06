@@ -840,6 +840,7 @@ body {
   font-size: 1.2em;
   text-align: left;
   margin: 5% 0 5%;
+  padding: 0 5px;
 }
 #financiamento-section .financiamento-form-container .financiamento-result .result-grid .total-value #total-value {
   font-size: 0.8em;
@@ -1373,58 +1374,110 @@ body {
   text-align: center;
   margin-bottom: 25px;
 }
+#acp-universo .universo-selector {
+  display: none;
+}
 #acp-universo .universo-acp-options {
   max-width: 1280px;
-  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#acp-universo .universo-acp-options .dots-container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-between;
+  padding-top: 10px;
+  z-index: 10;
+  gap: 15px;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  gap: 2%;
 }
-#acp-universo .universo-acp-options .universo-acp-opcao {
-  width: 25%;
-  -webkit-order: 0;
-  -ms-flex-order: 0;
-  order: 0;
-  -webkit-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  flex: 0 1 auto;
-  -webkit-align-self: auto;
-  -ms-flex-item-align: auto;
+@media screen and (min-width: 768px) {
+  #acp-universo .universo-acp-options .dots-container {
+    display: none;
+  }
+}
+#acp-universo .universo-acp-options .dots-container .dots-universo-btn {
+  z-index: 10;
+  height: 10px;
+  width: 10px;
+  background: #ddd;
+  border-radius: 10px;
+  transition: 1s;
+  display: inline-block;
+  cursor: pointer;
+}
+#acp-universo .universo-acp-options .universo-options-mb {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  width: 350px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  #acp-universo .universo-acp-options .universo-options-mb {
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    width: 100%;
+  }
+}
+#acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao {
+  width: 350px;
   align-self: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#acp-universo .universo-acp-options .universo-acp-opcao .universo-acp-img-container {
-  width: 100%;
+@media screen and (min-width: 768px) {
+  #acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao {
+    width: 25%;
+    order: 0;
+    flex: 0 1 auto;
+  }
 }
-#acp-universo .universo-acp-options .universo-acp-opcao .universo-acp-img-container img {
-  max-width: 100%;
+#acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao .universo-opcao1 {
+  margin-left: 0;
+}
+@media screen and (min-width: 768px) {
+  #acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao .universo-opcao1 {
+    margin-left: 0;
+  }
+}
+#acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao .universo-acp-img-container {
+  width: 350px;
+}
+@media screen and (min-width: 768px) {
+  #acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao .universo-acp-img-container {
+    width: 100%;
+  }
+}
+#acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao .universo-acp-img-container img {
+  width: 100%;
   height: auto;
 }
-#acp-universo .universo-acp-options .universo-acp-opcao .universo-acp-description span {
+#acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao .universo-acp-description span {
   margin: 0.5em 0;
   color: #f0050a;
   font-size: 1.5em;
   font-family: elliot-bold;
 }
-#acp-universo .universo-acp-options .universo-acp-opcao .universo-acp-description p {
+#acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao .universo-acp-description p {
   margin: 0.5em 0;
   font-family: elliot-light;
 }
-#acp-universo .universo-acp-options .universo-acp-opcao .universo-acp-know-more {
+#acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao .universo-acp-know-more {
   padding: 0.5em 1em;
   border: none;
   background-color: #f0050a;
   cursor: pointer;
   margin-right: auto;
 }
-#acp-universo .universo-acp-options .universo-acp-opcao .universo-acp-know-more a {
+#acp-universo .universo-acp-options .universo-options-mb .universo-acp-opcao .universo-acp-know-more a {
   color: #fff;
   text-transform: uppercase;
   font-family: elliot-light;
@@ -1510,22 +1563,7 @@ body {
     height: 560px;
   }
 }
-#home-highlights .home-higlights-container .home-higlights-viagens #dot1-viagens:checked ~ .viagens-slides-container .viagem-first {
-  margin-left: 0;
-}
-#home-highlights .home-higlights-container .home-higlights-viagens #dot2-viagens:checked ~ .viagens-slides-container .viagem-first {
-  margin-left: -100%;
-}
-#home-highlights .home-higlights-container .home-higlights-viagens #dot3-viagens:checked ~ .viagens-slides-container .viagem-first {
-  margin-left: -200%;
-}
-#home-highlights .home-higlights-container .home-higlights-viagens #dot4-viagens:checked ~ .viagens-slides-container .viagem-first {
-  margin-left: -300%;
-}
-#home-highlights .home-higlights-container .home-higlights-viagens #dot5-viagens:checked ~ .viagens-slides-container .viagem-first {
-  margin-left: -400%;
-}
-#home-highlights .home-higlights-container .home-higlights-viagens input {
+#home-highlights .home-higlights-container .home-higlights-viagens .radio-input {
   visibility: hidden;
 }
 #home-highlights .home-higlights-container .viagens-slides-container {
@@ -1540,6 +1578,9 @@ body {
     width: 640px;
     height: 100%;
   }
+}
+#home-highlights .home-higlights-container .viagens-slides-container .viagem-first {
+  margin-left: 0;
 }
 #home-highlights .home-higlights-container .viagens-slides-container .viagens-slide {
   width: 350px;
@@ -1598,15 +1639,30 @@ body {
 }
 #acp-eventos .eventos-acp-options {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 1280px;
   margin: 0 auto;
   gap: 2%;
 }
+@media screen and (min-width: 768px) {
+  #acp-eventos .eventos-acp-options {
+    max-height: 225px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
 #acp-eventos .eventos-acp-options .eventos-acp-opcao {
-  width: 25%;
+  width: 80%;
   cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  #acp-eventos .eventos-acp-options .eventos-acp-opcao {
+    width: 25%;
+  }
 }
 #acp-eventos .eventos-acp-options .eventos-acp-opcao .eventos-acp-img-container {
   position: relative;
@@ -1645,7 +1701,8 @@ body {
 }
 #acp-eventos .eventos-acp-options .eventos-acp-opcao .eventos-acp-description p {
   font-family: elliot-regular;
-  font-size: 1.1em;
+  font-size: 1em;
+  white-space: nowrap;
 }
 
 footer {
@@ -1730,6 +1787,14 @@ footer .footer-links {
   footer .footer-links .desporto {
     grid-column: 3/4;
     grid-row: 2/3;
+  }
+}
+footer .contactos {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  footer .contactos {
+    text-align: left;
   }
 }
 footer .contactos a {
