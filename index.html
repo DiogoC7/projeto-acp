@@ -284,33 +284,48 @@
 
     <section id="financiamento-section">
         <div id="financiamento-form-container" class="financiamento-form-container">
-            <form id="financiamento-form" onsubmit="return financiamento(event)"> 
-                <span>Obtenha financiamento para o seu carro novo</span>
+            <form id="financiamento-form"> 
                 <div class="form-column">
                     <label class="form-label" for="montanteTotal">Montante total:</label><br>
-                    <input type="range" name="montanteTotal" id="montanteTotal" min="0" max="999999" value="500000" onchange="updateProposta()">
+                    <input type="range" name="montanteTotal" id="montanteTotal" min="0" max="299999" value="20000" step=500 onchange="financiamento()"><br>
+                    <span id="total-value" class="total-value">20000€</span><br>
                     <label class="form-label" for="entradaInicial">Entrada inicial:</label><br>
-                    <input type="range" name="entradaInicial" id="entradaInicial" min="0" max="999999" value="100000" onchange="updateProposta()">
+                    <input type="range" name="entradaInicial" id="entradaInicial" min="0" max="100000" value="2000" step=100 onchange="financiamento()"><br>
+                    <span id="entrada-value" class="total-value">2000€</span><br>
                     <label class="form-label" for="prazoPagamento">prazo (anos):</label><br>
-                    <input type="range" name="prazoPagamento" id="prazoPagamento" min="1" max="60" value="24" onchange="updateProposta()">
+                    <input type="range" name="prazoPagamento" id="prazoPagamento" min="1" max="12" value="4" step=1 onchange="financiamento()"><br>
+                    <span id="prazo-value" class="total-value">4 anos</span>
                 </div>
-                <button class="form-submit-btn" type="submit">Calcular</button>
             </form>
-            <div id="form-result" class="form-result">
-                <span id="titulo-valor-carro" class="titulo-valor-carro"></span>
-                <div class="mau-estado">
-                    <span>Mau Estado</span>
-                    <p id="valor-carro-mau" class="valor-carro"></p>
+            <a href="#" class="financiar-btn" onclick="mudarDisplay(event)">Financiamento</a>
+            <div id="financiamento-result" class="financiamento-result">
+                <div class="result-grid">
+                    <div class="total-value">
+                        <span>Valor do automóvel: </span><span id="total-value">20000€</span><br>
+                        <span>Entrada inicial: </span><span id="total-entrada">2000€</span><br>
+                        <span>Valor do empréstimo: </span><span id="total-emprestimo">18000€</span><br>
+                        <span>Duração (meses): </span><span id="total-meses">58 meses</span><br>
+                    </div>
+                    <div class="proposta1-container">
+                        <span class="proposta-titulo">Proposta 1</span>
+                        <p id="proposta1-valor"></p>
+                        <p>Taxa de juro: 5%</p><br>
+                        <p>Spread: </p><p id="spread1-valor"></p>
+                    </div>
+                    <div class="proposta2-container">
+                        <span class="proposta-titulo">Proposta 2</span>
+                        <p id="proposta2-valor"></p>
+                        <p>Taxa de juro: 5%</p><br>
+                        <p>Spread: </p><p id="spread2-valor"></p>
+                    </div>
+                    <div class="proposta3-container">
+                        <span class="proposta-titulo">Proposta 3</span>
+                        <p id="proposta3-valor"></p>
+                        <p>Taxa de juro: 5%</p><br>
+                        <p>Spread: </p><p id="spread3-valor"></p>
+                    </div>
+                    <p class="aviso-valor">Estes valores servem apenas como referência. Peça um contacto para saber mais.</p>
                 </div>
-                <div class="bom-estado">
-                    <span>Bom Estado</span>
-                    <p id="valor-carro-bom" class="valor-carro"></p>
-                </div>
-                <div class="excelente-estado">
-                    <span>Excelente Estado</span>
-                    <p id="valor-carro-excelente" class="valor-carro"></p>
-                </div>
-                <p class="aviso-valor">Este valor serve apenas como referência. Peça um contacto para saber mais.</p>
             </div>
         </div>
     </section>

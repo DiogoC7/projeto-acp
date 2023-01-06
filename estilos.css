@@ -758,9 +758,81 @@ body {
 }
 
 #financiamento-section {
-  max-width: 1280px;
+  width: 100%;
   background-color: #f2f2f2;
+  margin: 20px 0;
+}
+#financiamento-section .financiamento-form-container {
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
+  padding: 2% 0;
+  gap: 5%;
+}
+@media screen and (min-width: 768px) {
+  #financiamento-section .financiamento-form-container {
+    flex-direction: row;
+  }
+}
+#financiamento-section .financiamento-form-container form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+}
+#financiamento-section .financiamento-form-container .financiar-btn {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5em 1em;
+  border: none;
+  background-color: #f0050a;
+  cursor: pointer;
+  margin: 0 auto;
+}
+#financiamento-section .financiamento-form-container .financiamento-result {
+  display: none;
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr) 0.5fr;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .total-value {
+  grid-column: span 3;
+  grid-row: 1/2;
+  font-family: elliot-regular;
+  font-size: 1.2em;
+  text-align: left;
+  margin: 5% 0 5%;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta1-container {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta2-container {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta3-container {
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .aviso-valor {
+  grid-column: span 3;
+  grid-row: 3/4;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta-titulo {
+  font-family: elliot-bold;
+  font-size: 1.4em;
+  color: #f0050a;
 }
 
 #acp-revista {

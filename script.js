@@ -155,24 +155,50 @@ function getCotacaoVenda(event) {
 }
 
 //financiamento
-function financiamento(montanteTotal) {
+function financiamento() {
   // Lê os valores de entrada inicial, montante financiado e prazo em meses
-  var entradaInicial = document.getElementById('entradaInicial').value;
-  var montanteFinanciado = montanteTotal - entradaInicial;
-  var prazo = document.getElementById('prazo').value;
+  const montanteTotal = document.getElementById('montanteTotal').value;
+  const entradaInicial = document.getElementById('entradaInicial').value;
+  const prazoPagamento = document.getElementById('prazoPagamento').value;
+  const valorEmprestimo = montanteTotal - entradaInicial;
+  const meses = prazoPagamento *12;
+
+  document.getElementById('total-value').innerHTML = `${montanteTotal}€`;
+  document.getElementById('entrada-value').innerHTML = `${entradaInicial}€`;
+  document.getElementById('prazo-value').innerHTML = `${prazoPagamento} anos`;
 
   // Gera 3 valores aleatórios de spread entre 1% e 5%
-  var spread1 = Math.random() * 4 + 1;
-  var spread2 = Math.random() * 4 + 1;
-  var spread3 = Math.random() * 4 + 1;
+  const spread1 = Math.random() * 0.04 + 0.01;
+  const spread2 = Math.random() * 0.04 + 0.01;
+  const spread3 = Math.random() * 0.04 + 0.01;
+
+  document.getElementById('spread1-valor').innerHTML = `${spread1.toFixed(2)}%`;
+  document.getElementById('spread2-valor').innerHTML = `${spread2.toFixed(2)}%`;
+  document.getElementById('spread3-valor').innerHTML = `${spread3.toFixed(2)}%`;
 
   // Calcula a taxa de juro total para cada um dos 3 cenários, adicionando o spread ao valor base de 5%
-  var taxaJuro1 = 5 + spread1;
-  var taxaJuro2 = 5 + spread2;
-  var taxaJuro3 = 5 + spread3;
+  const taxaJuro1 = 0.05 + spread1;
+  const taxaJuro2 = 0.05 + spread2;
+  const taxaJuro3 = 0.05 + spread3;
 
   // Calcula o valor da prestação mensal para cada um dos 3 cenários
-  var prestacao1 = montanteTotal / ((1 - Math.pow(1 + taxaJuro1/100, -prazo)) / (taxaJuro1/100));
-  var prestacao2 = montanteTotal / ((1 - Math.pow(1 + taxaJuro2/100, -prazo)) / (taxaJuro2/100));
-  var prestacao3 = montanteTotal / ((1 - Math.pow(1 + taxaJuro3/100, -prazo)) / (taxaJuro3/100));
+  const prestacao1 = (taxaJuro1 * valorEmprestimo) / meses;
+  const prestacao2 = (taxaJuro2 * valorEmprestimo) / meses;
+  const prestacao3 = (taxaJuro3 * valorEmprestimo) / meses;
+
+  document.getElementById('proposta1-valor').innerHTML = `${prestacao1.toFixed(2)}€`;
+  document.getElementById('proposta2-valor').innerHTML = `${prestacao2.toFixed(2)}€`;
+  document.getElementById('proposta3-valor').innerHTML = `${prestacao3.toFixed(2)}€`;
+    
 }
+
+function mudarDisplay() {
+  event.preventDefault();
+  financiamento();
+  const resultDiv = document.getElementById("financiamento-result");
+    if (resultDiv.style.display === "none") {
+      resultDiv.style.display = "block";
+    } else {
+      resultDiv.style.display = "none";
+    }
+  }
