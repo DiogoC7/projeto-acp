@@ -762,6 +762,12 @@ body {
   background-color: #f2f2f2;
   margin: 20px 0;
 }
+#financiamento-section .titulo-financiamento {
+  padding: 20px;
+  text-align: center;
+  font-family: elliot-bold;
+  font-size: 1.6em;
+}
 #financiamento-section .financiamento-form-container {
   max-width: 1280px;
   display: flex;
@@ -784,6 +790,28 @@ body {
   justify-content: center;
   align-items: center;
   gap: 20%;
+}
+#financiamento-section .financiamento-form-container form input[type=range] {
+  -webkit-appearance: none;
+}
+#financiamento-section .financiamento-form-container form input[type=range]::-webkit-slider-runnable-track {
+  height: 20px;
+  background: #f0050a;
+  border-radius: 5px;
+}
+#financiamento-section .financiamento-form-container form input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  overflow: visible;
+  cursor: pointer;
+}
+#financiamento-section .financiamento-form-container form .form-column .slider-label {
+  font-size: 0.9em;
+  font-family: elliot-light;
+  color: grey;
 }
 #financiamento-section .financiamento-form-container .financiar-btn {
   text-decoration: none;
@@ -813,21 +841,62 @@ body {
   text-align: left;
   margin: 5% 0 5%;
 }
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .total-value #total-value {
+  font-size: 0.8em;
+  font-family: elliot-light;
+  color: grey;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .total-value #total-entrada {
+  font-size: 0.8em;
+  font-family: elliot-light;
+  color: grey;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .total-value #total-emprestimo {
+  font-size: 0.8em;
+  font-family: elliot-light;
+  color: grey;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .total-value #total-meses {
+  font-size: 0.8em;
+  font-family: elliot-light;
+  color: grey;
+}
 #financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta1-container {
   grid-column: 1/2;
   grid-row: 2/3;
+  padding: 0 10px;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta1-container #total-emprestimo1 {
+  font-family: elliot-light;
+  color: #f0050a;
+  font-size: 0.9em;
 }
 #financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta2-container {
   grid-column: 2/3;
   grid-row: 2/3;
+  padding: 0 10px;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta2-container #total-emprestimo2 {
+  font-family: elliot-light;
+  color: #f0050a;
+  font-size: 0.9em;
 }
 #financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta3-container {
   grid-column: 3/4;
   grid-row: 2/3;
+  padding: 0 10px;
+}
+#financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta3-container #total-emprestimo3 {
+  font-family: elliot-light;
+  color: #f0050a;
+  font-size: 0.9em;
 }
 #financiamento-section .financiamento-form-container .financiamento-result .result-grid .aviso-valor {
   grid-column: span 3;
   grid-row: 3/4;
+  font-family: elliot-light;
+  font-size: 0.7em;
+  padding-top: 5%;
 }
 #financiamento-section .financiamento-form-container .financiamento-result .result-grid .proposta-titulo {
   font-family: elliot-bold;
@@ -1526,6 +1595,57 @@ body {
   color: #333;
   text-align: center;
   margin-bottom: 25px;
+}
+#acp-eventos .eventos-acp-options {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  gap: 2%;
+}
+#acp-eventos .eventos-acp-options .eventos-acp-opcao {
+  width: 25%;
+  cursor: pointer;
+}
+#acp-eventos .eventos-acp-options .eventos-acp-opcao .eventos-acp-img-container {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+}
+#acp-eventos .eventos-acp-options .eventos-acp-opcao .eventos-acp-img-container .data-evento {
+  position: absolute;
+  background-color: #1a1a1a;
+  color: white;
+  left: 0;
+  height: 96%;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#acp-eventos .eventos-acp-options .eventos-acp-opcao .eventos-acp-img-container .data-evento p {
+  font-family: elliot-bold;
+  font-size: 4em;
+}
+#acp-eventos .eventos-acp-options .eventos-acp-opcao .eventos-acp-img-container .data-evento span {
+  font-family: elliot-bold;
+  font-size: 1.1em;
+}
+#acp-eventos .eventos-acp-options .eventos-acp-opcao .eventos-acp-img-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+#acp-eventos .eventos-acp-options .eventos-acp-opcao .eventos-acp-description span {
+  font-family: elliot-bold;
+  font-size: 1.3em;
+  color: #f0050a;
+}
+#acp-eventos .eventos-acp-options .eventos-acp-opcao .eventos-acp-description p {
+  font-family: elliot-regular;
+  font-size: 1.1em;
 }
 
 /*# sourceMappingURL=estilos.css.map */

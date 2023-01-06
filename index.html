@@ -283,18 +283,21 @@
     </section>
 
     <section id="financiamento-section">
+        <div class="titulo-financiamento">
+            <span>Obtenha financiamento para o seu carro novo</span>
+        </div>
         <div id="financiamento-form-container" class="financiamento-form-container">
             <form id="financiamento-form"> 
                 <div class="form-column">
                     <label class="form-label" for="montanteTotal">Montante total:</label><br>
                     <input type="range" name="montanteTotal" id="montanteTotal" min="0" max="299999" value="20000" step=500 onchange="financiamento()"><br>
-                    <span id="total-value" class="total-value">20000€</span><br>
+                    <span id="carro-value" class="slider-label">20000€</span><br>
                     <label class="form-label" for="entradaInicial">Entrada inicial:</label><br>
                     <input type="range" name="entradaInicial" id="entradaInicial" min="0" max="100000" value="2000" step=100 onchange="financiamento()"><br>
-                    <span id="entrada-value" class="total-value">2000€</span><br>
+                    <span id="entrada-value" class="slider-label">2000€</span><br>
                     <label class="form-label" for="prazoPagamento">prazo (anos):</label><br>
                     <input type="range" name="prazoPagamento" id="prazoPagamento" min="1" max="12" value="4" step=1 onchange="financiamento()"><br>
-                    <span id="prazo-value" class="total-value">4 anos</span>
+                    <span id="prazo-value" class="slider-label">4 anos</span>
                 </div>
             </form>
             <a href="#" class="financiar-btn" onclick="mudarDisplay(event)">Financiamento</a>
@@ -303,26 +306,28 @@
                     <div class="total-value">
                         <span>Valor do automóvel: </span><span id="total-value">20000€</span><br>
                         <span>Entrada inicial: </span><span id="total-entrada">2000€</span><br>
-                        <span>Valor do empréstimo: </span><span id="total-emprestimo">18000€</span><br>
                         <span>Duração (meses): </span><span id="total-meses">58 meses</span><br>
                     </div>
                     <div class="proposta1-container">
                         <span class="proposta-titulo">Proposta 1</span>
                         <p id="proposta1-valor"></p>
-                        <p>Taxa de juro: 5%</p><br>
-                        <p>Spread: </p><p id="spread1-valor"></p>
+                        <p>Taxa de juro: 5%</p>
+                        <p id="spread1-valor"></p>
+                        <p>Valor do empréstimo: </p><span id="total-emprestimo1">18000€</span><br>
                     </div>
                     <div class="proposta2-container">
                         <span class="proposta-titulo">Proposta 2</span>
                         <p id="proposta2-valor"></p>
-                        <p>Taxa de juro: 5%</p><br>
-                        <p>Spread: </p><p id="spread2-valor"></p>
+                        <p>Taxa de juro: 5%</p>
+                        <p id="spread2-valor"></p>
+                        <p>Valor do empréstimo: </p><span id="total-emprestimo2">18000€</span><br>
                     </div>
                     <div class="proposta3-container">
                         <span class="proposta-titulo">Proposta 3</span>
                         <p id="proposta3-valor"></p>
-                        <p>Taxa de juro: 5%</p><br>
-                        <p>Spread: </p><p id="spread3-valor"></p>
+                        <p>Taxa de juro: 5%</p>
+                        <p id="spread3-valor"></p>
+                        <p>Valor do empréstimo: </p><span id="total-emprestimo3">18000€</span><br>
                     </div>
                     <p class="aviso-valor">Estes valores servem apenas como referência. Peça um contacto para saber mais.</p>
                 </div>
@@ -406,7 +411,7 @@
             </div>
             <div class="universo-acp-opcao">
                 <div class="universo-acp-img-container">
-                    <img src="/img//ACP-Universo-Plano-Saude-gratuito.jpg" alt="">
+                    <img src="/img/ACP-Universo-Plano-Saude-gratuito.jpg" alt="">
                 </div>
                 <div class="universo-acp-description">
                     <span>
@@ -534,66 +539,70 @@
         <div class="eventos-acp-options">
             <div class="eventos-acp-opcao">
                 <div class="eventos-acp-img-container">
-                    <img src="/img/ACP-Universo-Assistencia-Viagem.jpg" alt="">
+                    <div class="data-evento">
+                        <p>11</p>
+                        <span>jan</span>
+                    </div>
+                    <img src="/img/eventos1.jpg" alt="">
                 </div>
                 <div class="eventos-acp-description">
                     <span>
-                        Assitência em viagem
+                        Clássicos
                     </span>
                     <p>
-                        A única assistência que não o deixa parado
+                        Passeio dos Ingleses Lisboa e Porto
                     </p>
-                </div>
-                <div class="eventos-acp-know-more">
-                    <a href="#">saiba mais</a>
                 </div>
             </div>
             <div class="eventos-acp-opcao">
                 <div class="eventos-acp-img-container">
-                    <img src="/img//ACP-Universo-Plano-Saude-gratuito.jpg" alt="">
+                    <div class="data-evento">
+                        <p>25</p>
+                        <span>jan</span>
+                    </div>
+                    <img src="/img/eventos2.jpg" alt="">
                 </div>
                 <div class="eventos-acp-description">
                     <span>
-                        Plano de saúde gratuito
+                        Golfe
                     </span>
                     <p>
-                        Os sócios ACP têm acesso aos melhores prestadores de saúde privados
+                        Circuito Semana ACP/BPI - Arranque Oficial
                     </p>
-                </div>
-                <div class="eventos-acp-know-more">
-                    <a href="#">saiba mais</a>
                 </div>
             </div>
             <div class="eventos-acp-opcao">
                 <div class="eventos-acp-img-container">
-                    <img src="/img/ACP-Universo-Escola-Conducao.jpg" alt="">
+                    <div class="data-evento">
+                        <p>11</p>
+                        <span>fev</span>
+                    </div>
+                    <img src="/img/eventos3.jpg" alt="">
                 </div>
                 <div class="eventos-acp-description">
                     <span>
-                        Escola de condução
+                        Golfe
                     </span>
                     <p>
-                        Tire a carta com o ACP: fácil, rápido e com resultados
+                        Grande Prémio ACP - 1ª prova
                     </p>
-                </div>
-                <div class="eventos-acp-know-more">
-                    <a href="#">saiba mais</a>
                 </div>
             </div>
             <div class="eventos-acp-opcao">
                 <div class="eventos-acp-img-container">
-                    <img src="/img/ACP-Universo-Descontos-ACP.jpg" alt="">
+                    <div class="data-evento">
+                        <p>22</p>
+                        <span>fev</span>
+                    </div>
+                    <img src="/img/eventos4.jpg" alt="">
                 </div>
                 <div class="eventos-acp-description">
                     <span>
-                        Descontos com o ACP
+                        Golfe
                     </span>
                     <p>
-                        Descubra como poupar em centenas de grandes marcas
+                        Circuito Semana ACP/BPI - 2ª prova
                     </p>
-                </div>
-                <div class="eventos-acp-know-more">
-                    <a href="#">saiba mais</a>
                 </div>
             </div>
         </div>

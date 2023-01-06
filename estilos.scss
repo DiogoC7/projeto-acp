@@ -945,6 +945,13 @@ body {
     background-color: #f2f2f2;
     margin: 20px 0;
 
+    .titulo-financiamento {
+        padding: 20px;
+        text-align: center;
+        font-family: elliot-bold;
+        font-size: 1.6em;
+    }
+
     .financiamento-form-container{
         max-width: $max-width;
         display: flex;
@@ -964,6 +971,34 @@ body {
             justify-content: center;
             align-items: center;
             gap: 20%;
+              
+            input[type=range] {
+                -webkit-appearance: none;
+                &::-webkit-slider-runnable-track {
+                    height: 20px;
+                    background: $vermelho;
+                    border-radius: 5px;
+                  }
+
+                &::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 10px;
+                    background-color: #f2f2f2;
+                    overflow: visible;
+                    cursor: pointer;
+                  }
+              }
+              
+
+            .form-column {
+                .slider-label {
+                    font-size: 0.9em;
+                    font-family: elliot-light;
+                    color: grey;
+                }
+            }
         }
 
         .financiar-btn {
@@ -981,6 +1016,7 @@ body {
             text-align: center;
             border: 1px solid $white-bck;
             padding: 10px;
+
             .result-grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -993,24 +1029,69 @@ body {
                     font-size: 1.2em;
                     text-align: left;
                     margin: 5% 0 5%;
+
+                    #total-value {
+                        font-size: 0.8em;
+                        font-family: elliot-light;
+                        color: grey;
+                    }
+                    #total-entrada {
+                        font-size: 0.8em;
+                        font-family: elliot-light;
+                        color: grey;
+                    }
+                    #total-emprestimo {
+                        font-size: 0.8em;
+                        font-family: elliot-light;
+                        color: grey;
+                    }
+                    #total-meses {
+                        font-size: 0.8em;
+                        font-family: elliot-light;
+                        color: grey;
+                    }
                 }
 
                 .proposta1-container {
                     grid-column: 1/2;
                     grid-row: 2/3;
+                    padding: 0 10px;
+
+                    #total-emprestimo1 {
+                        font-family: elliot-light;
+                        color: $vermelho;
+                        font-size: 0.9em;
+                    }
                 }
                 .proposta2-container {
                     grid-column: 2/3;
                     grid-row: 2/3;
+                    padding: 0 10px;
+
+                    #total-emprestimo2 {
+                        font-family: elliot-light;
+                        color: $vermelho;
+                        font-size: 0.9em;
+                    }
                 }
                 .proposta3-container {
                     grid-column: 3/4;
                     grid-row: 2/3;
+                    padding: 0 10px;
+
+                    #total-emprestimo3 {
+                        font-family: elliot-light;
+                        color: $vermelho;
+                        font-size: 0.9em;
+                    }
                 }
 
                 .aviso-valor {
                     grid-column: span 3;
                     grid-row: 3/4;
+                    font-family: elliot-light;
+                    font-size: 0.7em;
+                    padding-top: 5%;
                 }
 
                 .proposta-titulo {
@@ -1767,6 +1848,64 @@ body {
 
     .titulo-container {
         @include titulos-sections;
+    }
+    
+    .eventos-acp-options {
+        @include flex-row;
+        max-width: $max-width;
+        margin: 0 auto;
+        gap: 2%;
+
+        .eventos-acp-opcao {
+            width: 25%;
+            cursor: pointer;
+
+            .eventos-acp-img-container {
+                position: relative;
+                height: fit-content;
+                .data-evento {
+                    position: absolute;
+                    background-color: #1a1a1a;
+                    color: white;
+                    left: 0;
+                    height: 96%;
+                    width: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    p {
+                        font-family: elliot-bold;
+                        font-size: 4em;
+                    }
+
+                    span {
+                        font-family: elliot-bold;
+                        font-size: 1.1em;
+                    }
+                }
+                width: 100%;
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                }
+            }
+
+            .eventos-acp-description {
+                span {
+                    font-family: elliot-bold;
+                    font-size: 1.3em;
+                    color: $vermelho;
+                }
+
+                p {
+                    font-family: elliot-regular;
+                    font-size: 1.1em;
+                }
+            }
+        }
     }
 }
 //FOOTER
