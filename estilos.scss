@@ -1909,3 +1909,181 @@ body {
     }
 }
 //FOOTER
+
+footer {
+    background: #e2e2e2;
+    margin-top: 50px;
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: $max-width;
+        margin: 0 auto;
+        padding-top: 2%;
+
+        @media screen and (min-width: 768px) {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr;
+            align-items: baseline;    
+            gap: 3%;    
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    }
+
+    .category {
+        font-family: elliot-regular;     
+        text-transform: uppercase;      
+        padding-bottom: 10px;
+        border-bottom: 1px solid #b3b2b2;
+        white-space: nowrap;
+    }
+
+    .footer-links {
+        display: none;
+
+        @media screen and (min-width: 768px) {
+            grid-column: 1/2;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 5%;
+
+            a {
+                text-decoration: none;
+                color: #1a1a1a;
+
+                &:hover {
+                    color: $vermelho;
+                }
+            }
+
+            ul {
+                padding-top: 10px;
+                font-size: 0.9em;
+                font-family: elliot-light;
+            }
+
+            .clube {
+                grid-column: 1/2;
+                grid-row: 1/2;
+            }
+
+            .servicos {
+                grid-column: 2/3;
+                grid-row: 1/2;
+            }
+
+            .veiculos {
+                grid-column: 3/4;
+                grid-row: 1/2;
+            }
+
+            .mobilidade {
+                grid-column: 4/5;
+                grid-row: 1/2;
+            }
+
+            .saude {
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+
+            .viagens {
+                grid-column: 2/3;
+                grid-row: 2/3;
+            }
+
+            .desporto {
+                grid-column: 3/4;
+                grid-row: 2/3;
+            }
+        }
+    }
+
+    .contactos {
+        a {
+            text-decoration: none;
+            color: #1a1a1a;
+
+            &:hover{
+                color: $vermelho;
+            }
+        }
+
+        .notes {
+            font-family: elliot-light;
+            font-size: 0.9em;
+        }
+
+        .subcategory {
+            font-family: elliot-light;
+            text-transform: uppercase;
+            white-space: nowrap;
+            font-size: 0.9em;
+            margin-top: 25px;
+        }
+
+        .phone-numbers {
+    
+            .number {
+                font-size: 1.5em;
+                padding: 2px 0 0;
+            }
+        }
+
+        .social {
+            .links {
+                font-size: 1.5em;
+                display: flex;
+                align-items: center;
+                gap: 10%;
+                padding: 10px 0;
+            }
+        }
+
+        .reclamacoes {
+            margin-top: 20px;
+        }
+
+        .livro-reclamacoes {
+            height: 60px;
+            span {
+                background: url('/img/livro-reclamacoes.png');
+
+                &:hover {
+                    background: url('/img/livro-reclamacoes-red.png');
+                }
+            }
+        }
+        
+    }
+
+    .terms-and-conditions {
+        background-color: #1a1a1a;
+        font-size: 0.8em;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .terms-container {
+            @include flex-row;
+            flex-wrap: wrap;
+            max-width: $max-width;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            margin: 0 auto;
+            padding: 20px 0;
+
+            .sempre {
+                font-size: 1.5em;
+            }
+        }
+    }
+}
